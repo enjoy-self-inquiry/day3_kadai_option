@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/contact_day3_option.css">
+  <title>ラーメン屋さん</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header clearfix">
+      <a href="index.html">
+        <img src="./images/logo2.png" class="logo_image">
+      </a>
+      <nav>
+        <ul class="top_menu clearfix">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="business.html">事業内容</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <img src="./images/mmm_07.jpg" class="image_area">
+    <div class="wrapper clearfix">
+      <aside class="side_menu">
+        <nav>
+          <ul>
+            <li><a href="business.html">事業内容</a></li>
+            <li><a href="company.html">会社概要</a></li>
+            <li class="point"><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <p class="banner">
+          <a href="#">
+            <img src="./images/tukemen.png">
+          </a>
+        </p>
+      </aside>
+
+<!--ここからモーダル表示・非表示のために追記しました。-->
+<!--お問い合わせフォームボタンを作成。ボタンをクリックしたときに発火させるため、idとclassを付けた。-->
+       <div id="inquire_show" class="submit"><button type="submit" class="inquire_btn">お問い合わせフォームはこちら</button></div>
+<!--ボタンクリック前までは、CSS上の記述「display:none;」で非表示になっている部分＝モーダル-->
+        <div id="inquire_modal" class="inquire_modal_wrapper">
+          <div class="modal">
+<!--モーダル部分の閉じるボタン。50行目まで。-->
+            <div id="close_modal">
+              <i class="close_btn">×</i>
+            </div>
+<!--ここから94行目までは問い合わせフォーム本体（day1ペアワーク課題から新たに加えた点は、inputのplaceholder属性。）-->
+              <article class="content">
+                <form action="" method="post">
+                  <table>
+                    <tr>
+                      <th>お名前</th>
+                      <td><input type="text" name="name" class="name" placeholder="ラーメン　太郎"></td>
+                    </tr>
+                    <tr>
+                      <th>メールアドレス</th>
+                      <td><input type="email" name="email" class="email" placeholder="foo1234@bar.com"></td>
+                    </tr>
+                    <tr>
+                      <th>電話番号</th>
+                      <td><input type="tel" name="tel" class="tel" placeholder="ハイフンなしでご入力ください"></td>
+                    </tr>
+                    <tr>
+                      <th>性別</th>
+                      <td>
+                        <input type="radio" name="gender" value="male" class="radio">男
+                        <input type="radio" name="gender" value="female" class="radio">女
+                      </td>
+                    </tr>
+                  </table>
+                  <table>
+                    <th>
+                    </th>
+                    <td>
+                      <select name=”taste”>
+                        <option value=”shoyu”>醤油味について</option>
+                        <option value=”miso”>みそ味について</option>
+                        <option value=”sio”>塩味について</option>
+                        <option value=”tonkotu”>とんこつ味について</option>
+                        <option value=”tukemen”>つけ麺について</option>
+                      </select>
+                    </td>
+                    <tr>
+                      <th>お問い合わせ内容</th>
+                      <td><textarea name="message" class="message"></textarea></td>
+                    </tr>
+                  </table>
+                  <div class="submit"><button type="submit" class="btn">送信</button></div>
+                </form>
+              </article>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+      <p>Copyright ©2020 ラーメン屋さん</p>
+    </footer>
+  </div>
+
+<!--jQueryライブラリの読み込み。<head>タグに入れてもOKのようだが、</body>直前で記述すると処理が速く済むらしい。-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+  </script>
+<!--処理速度を速くするため、また可読性を上げるため、jQueryの記述は、jsファイルに分けた。-->
+    <script src = "script.js"></script>
+
+</body>
+</html>
